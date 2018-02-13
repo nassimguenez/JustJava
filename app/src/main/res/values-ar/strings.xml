@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Just Java</string>
+    <string name="thank_you" translatable="true">شكرًا لك!</string>
+    <string name="order_summary_name" translatable="true">إسم: <xliff:g id="name" exmaple="Amy">%s</xliff:g></string>
+    <string name="topping" translatable="false">إضافات</string>
+</resources>

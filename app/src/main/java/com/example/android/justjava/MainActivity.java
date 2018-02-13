@@ -12,8 +12,10 @@ package com.example.android.justjava;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,8 +27,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
-    int price = 0;
-
+    int price = 5;
+    boolean whippedcream = false;
+    boolean chocolate = false;
 
 
     @Override
@@ -36,73 +39,73 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void submitOrder() {
+    public void submitOrder(View view) {
         String priceMessage = createOrderSummary();
-        displayMessage(priceMessage);
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {"gueneznassim@gmail.com"});
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Coffee Order");
         emailIntent.putExtra(Intent.EXTRA_TEXT, priceMessage);
-        startActivity(Intent.createChooser(emailIntent, "Send email..."));
+        emailIntent.setType("message/rfc822");
+        if (emailIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(Intent.createChooser(emailIntent, "Send email..."));
+        }
 
     }
 
 
-    public void increment() {
+   public void increment(View view) {
         quantity = quantity + 1;
         calculatePrice();
-        displayQuantity();
-        displayPrice();
     }
 
 
-    public void decrement() {
+    public void decrement(View view) {
         if (quantity > 0) {
             quantity = quantity - 1;
             calculatePrice();
         }
-        displayQuantity();
-        displayPrice();
     }
 
     private void calculatePrice() {
         CheckBox addWhippedCream = (CheckBox) findViewById(R.id.whiped_cream);
         CheckBox addChocolate = (CheckBox) findViewById(R.id.chocolate_checkbox);
+        price = 5;
         if (addWhippedCream.isChecked()) {
+            whippedcream = true;
             price += 1;
         }
         if (addChocolate.isChecked()) {
+            chocolate = true;
             price += 2;
         }
-        price = quantity * 5;
+        price = quantity * price;
+        displayQuantity();
+        displayPrice();
     }
 
     private String createOrderSummary() {
         EditText name = (EditText) findViewById(R.id.edittext_name);
-        String orderSummary = "Name: " + name.getText().toString()
-                + "\nAdd Whipped Cream: " + addWhippedCream.isChecked()
-                + "\nAdd Chocolate: " + addChocolate.isChecked()
+        String orderSummary = getString(R.string.order_summary_name, name.getText().toString())
+                + "\nAdd Whipped Cream: " + whippedcream
+                + "\nAdd Chocolate: " + chocolate
                 + "\nQuantity: "
                 + quantity + "\nTotal: $"
                 + price
-                + "\nThank you!";
+                + getString(R.string.thank_you);
         return orderSummary;
     }
 
 
-    private void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
-    }
-
 
     private void displayPrice() {
         TextView priceTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        priceTextView.setText("PRICE: $" + quantity);
+        priceTextView.setText("PRICE: $" + price);
     }
 
     private void displayQuantity() {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + price);
+        quantityTextView.setText("" + quantity);
     }
 
 }
