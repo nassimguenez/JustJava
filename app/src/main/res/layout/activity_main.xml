@@ -6,109 +6,121 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.justjava.MainActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <ImageView
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/coffee_cup" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="40dp"
+            android:layout_alignParentLeft="true">
 
-            <EditText
-                android:hint="@string/nameHint"
-                android:inputType="textCapWords"
-                android:id="@+id/edit_text_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/plus_button"
+                android:onClick="increment" />
+
+            <TextView
+                style="@style/ShapesTextStyle"
+                android:id="@+id/order_summary_text_view"
+                android:background="@drawable/price_background"
+                android:layout_width="110dp"
+                android:layout_marginLeft="12dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/totalPrice" />
+
+            <Button
+                android:background="@drawable/minus_button"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="16dp"
+                android:onClick="decrement" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edit_text_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textSize="22sp"
+            android:hint="@string/nameHint"
+            android:inputType="textCapWords" />
+
+        <TextView
+            android:id="@+id/quantity_text_view"
+            android:textSize="30sp"
+            android:textColor="#795548"
+            android:background="@drawable/quantity_background"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="80dp"
+            android:textAlignment="center"
+            android:layout_alignParentRight="true"
+            android:text="0" />
+
+        <Button
+            style="@style/ShapesTextStyle"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:background="@drawable/order_background"
+            android:onClick="submitOrder"
+            android:layout_marginBottom="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/order" />
+
+        <LinearLayout
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="36dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/topping"
-                android:textAllCaps="true" />
+                android:text="@string/topping" />
 
             <CheckBox
                 android:id="@+id/whipped_cream_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:paddingLeft="24dp"
-                android:text="@string/whippedCream"
-                android:textSize="16sp" />
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="36dp"
+                android:text="@string/whippedCream" />
 
             <CheckBox
                 android:id="@+id/chocolate_checkbox"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="36sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:paddingLeft="24dp"
-                android:text="@string/chocolate"
-                android:textSize="16sp" />
+                android:text="@string/chocolate" />
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/quantity"
-                android:textAllCaps="true" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-
-                <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
-                    android:onClick="increment"
-                    android:text="+" />
-
-                <TextView
-                    android:id="@+id/quantity_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginTop="16dp"
-                    android:text="0"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:onClick="decrement"
-                    android:text="-" />
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/order_summary_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/totalPrice"
-                android:textColor="#000000" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:onClick="submitOrder"
-                android:text="@string/order" />
         </LinearLayout>
-
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

@@ -30,7 +30,7 @@
      the coffee quantity.
         activity_main.xml : TextView id.order_summary_text_view
         MainActivity.java : (private function) displayPrice() -->
-    <string name="totalPrice" translatable="false">PRICE: $<xliff:g id="price" exmaple="16$">%d</xliff:g></string>
+    <string name="totalPrice" translatable="false">$<xliff:g id="price" exmaple="16$">%d</xliff:g></string>
     
     <!-- "Order" hard string for the order summary. 
         activity_main.xml : Button

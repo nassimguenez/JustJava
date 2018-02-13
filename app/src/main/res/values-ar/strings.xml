@@ -2,15 +2,15 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Just Java</string>
     <string name="thank_you" translatable="true">شكرًا لك!</string>
-    <string name="order_summary_name" translatable="true">إسم: <xliff:g id="name" exmaple="Amy">%s</xliff:g></string>
-    <string name="topping" translatable="false">إضافات</string>
-    <string name="nameHint" translatable="false">إسم</string>
+    <string name="order_summary_name" translatable="true">إســـــم: <xliff:g id="name" exmaple="Amy">%s</xliff:g></string>
+    <string name="topping" translatable="false">إضافــات</string>
+    <string name="nameHint" translatable="false">إســـــم</string>
     <string name="whippedCream" translatable="false">كريمة مخفوقة</string>
-    <string name="chocolate" translatable="false">شوكولا</string>
-    <string name="quantity" translatable="false">ثمن</string>
+    <string name="chocolate" translatable="false">شـــوكولا</string>
+    <string name="quantity" translatable="false">كمية</string>
     <string name="order" translatable="false">طلب</string>
-    <string name="totalPrice" translatable="false">ثمن: $<xliff:g id="price" exmaple="Amy">%d</xliff:g></string>
-    <string name="coffeeQuantity" translatable="false">كمية: <xliff:g id="quantity" exmaple="44">%d</xliff:g></string>
+    <string name="totalPrice" translatable="false">$<xliff:g id="price" exmaple="Amy">%d</xliff:g></string>
+    <string name="coffeeQuantity" translatable="false">كميــــة: <xliff:g id="quantity" exmaple="44">%d</xliff:g></string>
     <string name="addWhippedCream" translatable="false">أضف كريمة مخفوقة: <xliff:g id="whippedCream" exmaple="Add Whipped Cream: No!">%s</xliff:g></string>
     <string name="addChocolate" translatable="false">أضف شوكلا: <xliff:g id="whippedCream" exmaple="Add Whipped Cream: No!">%s</xliff:g></string>
     <string name="yes" translatable="false">نعم!</string>
