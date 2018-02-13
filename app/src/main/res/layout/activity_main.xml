@@ -14,9 +14,9 @@
             android:orientation="vertical">
 
             <EditText
-                android:hint="Name"
+                android:hint="@string/namehint"
                 android:inputType="textCapWords"
-                android:id="@+id/edittext_name"
+                android:id="@+id/edit_text_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:paddingLeft="24dp"
-                android:text="Whipped Cream"
+                android:text="@string/whippedCream"
                 android:textSize="16sp" />
 
             <CheckBox
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:paddingLeft="24dp"
-                android:text="Chocolate"
+                android:text="@string/chocolate"
                 android:textSize="16sp" />
 
 
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
-                android:text="Quantity"
+                android:text="@string/quantity"
                 android:textAllCaps="true" />
 
             <LinearLayout
@@ -72,7 +72,7 @@
                     android:text="+" />
 
                 <TextView
-                    android:id="@+id/quantity-text-view"
+                    android:id="@+id/quantity_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -99,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
-                android:text="PRICE: $0"
+                android:text="@string/totalPrice"
                 android:textColor="#000000" />
 
             <Button
@@ -108,7 +108,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
                 android:onClick="submitOrder"
-                android:text="ORDER" />
+                android:text="@string/order" />
         </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

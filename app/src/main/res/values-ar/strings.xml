@@ -4,4 +4,15 @@
     <string name="thank_you" translatable="true">شكرًا لك!</string>
     <string name="order_summary_name" translatable="true">إسم: <xliff:g id="name" exmaple="Amy">%s</xliff:g></string>
     <string name="topping" translatable="false">إضافات</string>
+    <string name="namehint" translatable="false">إسم</string>
+    <string name="whippedCream" translatable="false">كريمة مخفوقة</string>
+    <string name="chocolate" translatable="false">شوكولا</string>
+    <string name="quantity" translatable="false">ثمن</string>
+    <string name="order" translatable="false">طلب</string>
+    <string name="totalPrice" translatable="false">ثمن: $<xliff:g id="price" exmaple="Amy">%d</xliff:g></string>
+    <string name="coffeeQuantity" translatable="false">كمية: <xliff:g id="quantity" exmaple="Amy">%d</xliff:g></string>
+    <string name="addWhippedCream" translatable="false">أضف كريمة مخفوقة: <xliff:g id="chocolate" exmaple="Amy">%s</xliff:g></string>
+    <string name="addChocolate" translatable="false">أضف شوكلا: <xliff:g id="chocolate" exmaple="Amy">%s</xliff:g></string>
+    <string name="yes" translatable="false">نعم!</string>
+    <string name="no" translatable="false">لا!</string>
 </resources>

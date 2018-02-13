@@ -27,7 +27,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
-    int price = 5;
+    int price = 0;
     boolean whippedcream = false;
     boolean chocolate = false;
 
@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView priceTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        priceTextView.setText(getString(R.string.totalPrice, price));
     }
 
 
@@ -85,14 +87,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String createOrderSummary() {
-        EditText name = (EditText) findViewById(R.id.edittext_name);
-        String orderSummary = getString(R.string.order_summary_name, name.getText().toString())
-                + "\nAdd Whipped Cream: " + whippedcream
-                + "\nAdd Chocolate: " + chocolate
-                + "\nQuantity: "
-                + quantity + "\nTotal: $"
-                + price
-                + getString(R.string.thank_you);
+        EditText name = findViewById(R.id.edit_text_name);
+        String orderSummary = getString(R.string.order_summary_name, name.getText().toString()) + "\n";
+        if (whippedcream){
+            orderSummary += getString(R.string.addWhippedCream, getString(R.string.yes)) + "\n";
+        }else {
+            orderSummary += getString(R.string.addWhippedCream, getString(R.string.no)) + "\n";
+        }
+
+        if (chocolate){
+            orderSummary += getString(R.string.addChocolate, getString(R.string.yes)) + "\n";
+        }else {
+            orderSummary += getString(R.string.addChocolate, getString(R.string.no)) + "\n";
+        }
+        orderSummary += getString(R.string.coffeeQuantity, quantity) + "\n";
+        orderSummary += getString(R.string.totalPrice, price) + "\n";
+        orderSummary += getString(R.string.thank_you);
         return orderSummary;
     }
 
@@ -100,12 +110,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayPrice() {
         TextView priceTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        priceTextView.setText("PRICE: $" + price);
+        priceTextView.setText(getString(R.string.totalPrice,  price));
     }
 
     private void displayQuantity() {
+        String quantityString =  Integer.toString(quantity);
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + quantity);
+        quantityTextView.setText(quantityString);
     }
 
 }

@@ -1,6 +1,29 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Just Java</string>
 
+    <!--Name -->
+    <string name="namehint" translatable="false">Name</string>
+
+    <string name="whippedCream" translatable="false">Whipped Cream</string>
+
+    <string name="chocolate" translatable="false">Chocolate</string>
+
+    <string name="quantity" translatable="false">Quantity</string>
+
+    <string name="order" translatable="false">Order</string>
+
+    <string name="totalPrice" translatable="false">PRICE: $<xliff:g id="pric" exmaple="Amy">%d</xliff:g></string>
+
+    <string name="coffeeQuantity" translatable="false">Quantity: <xliff:g id="quantit" exmaple="Amy">%d</xliff:g></string>
+
+    <string name="addWhippedCream" translatable="false">Add Whipped Cream: <xliff:g id="whippedCream" exmaple="Amy">%s</xliff:g></string>
+
+    <string name="addChocolate" translatable="false">Add Chocolate: <xliff:g id="chocolate" exmaple="Amy">%s</xliff:g></string>
+
+    <string name="yes" translatable="false">Yes!</string>
+
+    <string name="no" translatable="false">No!</string>
+
     <!-- Header text for the list of toppings [CHAR LIMIT=20] -->
     <string name="topping" translatable="false">Topping</string>
 
@@ -9,5 +32,5 @@
 
     <!--Name for the order summary. It will be shon in the format of "Name: Amy" where Amy is the
      user's name. [CHAR LIMIT=NONE]-->
-    <string name="order_summary_name" translatable="false">Name: <xliff:g id="name" exmaple="Amy">%s</xliff:g></string>
+    <string name="order_summary_name" translatable="false">Name: <xliff:g id="nam" exmaple="Amy">%s</xliff:g></string>
 </resources>
