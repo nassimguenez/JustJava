@@ -26,10 +26,10 @@ import android.widget.TextView;
  */
 public class MainActivity extends AppCompatActivity {
 
-    int quantity = 0;
-    int price = 0;
-    boolean whippedcream = false;
-    boolean chocolate = false;
+    int quantity = 0; // global coffee ordered quantity
+    int price = 0; // global price for the global; ordered quantity
+    boolean whippedCream = false; // global boolean indicator for adding whipped cream or not
+    boolean chocolate = false; // global boolean indicator for adding chocolate or not
 
 
     @Override
@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /* using intent to send the order message to an email address */
     public void submitOrder(View view) {
         String priceMessage = createOrderSummary();
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setData(Uri.parse("mailto:"));
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {"gueneznassim@gmail.com"});
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Coffee Order");
         emailIntent.putExtra(Intent.EXTRA_TEXT, priceMessage);
         emailIntent.setType("message/rfc822");
@@ -55,13 +55,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    /* increment coffee quantity and calculate the new total price */
    public void increment(View view) {
         quantity = quantity + 1;
         calculatePrice();
     }
 
-
+    /* decrement coffee quantity and calculate the new total price */
     public void decrement(View view) {
         if (quantity > 0) {
             quantity = quantity - 1;
@@ -69,12 +69,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /* Calculate the total new price for the ordered quantity of coffee according to the topping.
+     * display the the quantity and its total price */
     private void calculatePrice() {
-        CheckBox addWhippedCream = (CheckBox) findViewById(R.id.whiped_cream);
+        CheckBox addWhippedCream = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         CheckBox addChocolate = (CheckBox) findViewById(R.id.chocolate_checkbox);
         price = 5;
         if (addWhippedCream.isChecked()) {
-            whippedcream = true;
+            whippedCream = true;
             price += 1;
         }
         if (addChocolate.isChecked()) {
@@ -86,10 +88,11 @@ public class MainActivity extends AppCompatActivity {
         displayPrice();
     }
 
+    /* creating the order summary */
     private String createOrderSummary() {
         EditText name = findViewById(R.id.edit_text_name);
         String orderSummary = getString(R.string.order_summary_name, name.getText().toString()) + "\n";
-        if (whippedcream){
+        if (whippedCream){
             orderSummary += getString(R.string.addWhippedCream, getString(R.string.yes)) + "\n";
         }else {
             orderSummary += getString(R.string.addWhippedCream, getString(R.string.no)) + "\n";
@@ -107,12 +110,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    /*display the total price */
     private void displayPrice() {
         TextView priceTextView = (TextView) findViewById(R.id.order_summary_text_view);
         priceTextView.setText(getString(R.string.totalPrice,  price));
     }
 
+    /* display coffee ordered quantity */
     private void displayQuantity() {
         String quantityString =  Integer.toString(quantity);
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
