@@ -1,30 +1,30 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Just Java</string>
+    <string name="app_name" translatable="false">Just Java</string>
 
     <!-- "Name" hard string, for the name hint for name entering field
     activity_main.xml: (EditText) id.edit_text_name
     MainActivity.java :(private function) createOrderSummary()-->
-    <string name="nameHint" translatable="false">Name</string>
+    <string name="nameHint">Name</string>
 
     <!-- "Topping" hard string, Header text for the list of toppings [CHAR LIMIT=20]
      activity_main.xml: (TextView)
      MainActivity.java : NONE -->
-    <string name="topping" translatable="false">Topping</string>
+    <string name="topping">Topping</string>
  
     <!-- "Whipped Cream" hard string for the order summary. 
          activity_main.xml : (CheckBox) id.whipped_cream_checkbox
          MainActivity.java : (private function) calculatePrice() -->
-    <string name="whippedCream" translatable="false">Whipped Cream</string>
+    <string name="whippedCream">Whipped Cream</string>
 
     <!-- "Chocolate" hard string for the order summary. 
          activity_main.xml : (CheckBox) id.chocolate_checkbox
          MainActivity.java : (private function) calculatePrice() -->
-    <string name="chocolate" translatable="false">Chocolate</string>
+    <string name="chocolate">Chocolate</string>
 
     <!-- "Quantity" hard string for the order summary. 
          activity_main.xml : TextView
          MainActivity.java : (private function) createOrderSummary() -->
-    <string name="quantity" translatable="false">Quantity</string>
+    <string name="quantity">Quantity</string>
 
     <!--  "PRICE" hard string for the order summary. It will be shown in the format of "PRICE: 44$" where 44 is 
      the coffee quantity.
@@ -35,42 +35,42 @@
     <!-- "Order" hard string for the order summary. 
         activity_main.xml : Button
         MainActivity.java : NONE -->
-    <string name="order" translatable="false">Order</string>
+    <string name="order">Order</string>
 
     <!-- "Quantity" hard string for the order summary. It will be shown in the format of "Quantity: 44" where 44 is 
      the coffee quantity.
         activity_main.xml :NONE
         MainActivity.java : createOrderSummary() -->
-    <string name="coffeeQuantity" translatable="false">Quantity: <xliff:g id="quantity" exmaple="44">%d</xliff:g></string>
+    <string name="coffeeQuantity">Quantity: <xliff:g id="quantity" exmaple="44">%d</xliff:g></string>
 
     <!-- "Add Whipped Cream" hard string for the order summary. 
         activity_main.xml :NONE
         MainActivity.java : createOrderSummary() -->
-    <string name="addWhippedCream" translatable="false">Add Whipped Cream: <xliff:g id="whippedCream" exmaple="Add Whipped Cream: No!">%s</xliff:g></string>
+    <string name="addWhippedCream">Add Whipped Cream: <xliff:g id="whippedCream" exmaple="Add Whipped Cream: No!">%s</xliff:g></string>
 
     <!-- "Add Chocolate" hard string for the order summary. 
         activity_main.xml :NONE
         MainActivity.java : createOrderSummary() -->
-    <string name="addChocolate" translatable="false">Add Chocolate: <xliff:g id="chocolate" exmaple="Add Chocolate: Yes!">%s</xliff:g></string>
+    <string name="addChocolate">Add Chocolate: <xliff:g id="chocolate" exmaple="Add Chocolate: Yes!">%s</xliff:g></string>
 
     <!-- "Yes" hard string for the order summary. 
        activity_main.xml :NONE
        MainActivity.java : createOrderSummary() -->
-    <string name="yes" translatable="false">Yes!</string>
+    <string name="yes">Yes!</string>
 
     <!-- "No" hard string for the order summary. 
        activity_main.xml :NONE
        MainActivity.java : createOrderSummary() -->
-    <string name="no" translatable="false">No!</string>
+    <string name="no">No!</string>
 
     <!-- "Thank you" hard string for the order summary. [CHAR LIMIT=NONE] 
     activity_main.xml :NONE
     MainActivity.java : createOrderSummary()-->
-    <string name="thank_you" translatable="false">Thank you!</string>
+    <string name="thank_you">Thank you!</string>
 
     <!--"Name: Amy" hard string for the order summary. It will be shown in the format of "Name: Amy" where Amy is the
      user's name. [CHAR LIMIT=NONE]
      activity_main.xml :NONE
      MainActivity.java : createOrderSummary()-->
-    <string name="order_summary_name" translatable="false">Name: <xliff:g id="name" exmaple="Amy">%s</xliff:g></string>
+    <string name="order_summary_name">Name: <xliff:g id="name" exmaple="Amy">%s</xliff:g></string>
 </resources>
