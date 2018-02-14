@@ -58,20 +58,20 @@ public class MainActivity extends AppCompatActivity {
     /* increment coffee quantity and calculate the new total price */
    public void increment(View view) {
         quantity = quantity + 1;
-        calculatePrice();
+        calculatePrice(view);
     }
 
     /* decrement coffee quantity and calculate the new total price */
     public void decrement(View view) {
         if (quantity > 0) {
             quantity = quantity - 1;
-            calculatePrice();
+            calculatePrice(view);
         }
     }
 
     /* Calculate the total new price for the ordered quantity of coffee according to the topping.
      * display the the quantity and its total price */
-    private void calculatePrice() {
+    public void calculatePrice(View view) {
         CheckBox addWhippedCream = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         CheckBox addChocolate = (CheckBox) findViewById(R.id.chocolate_checkbox);
         price = 5;

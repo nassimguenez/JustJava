@@ -6,121 +6,122 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.justjava.MainActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
+        <RelativeLayout
             android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/coffee_cup" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/coffee_cup" />
 
-        <LinearLayout
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="40dp"
-            android:layout_alignParentLeft="true">
+            <LinearLayout
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
 
 
-            <Button
-                android:layout_width="80dp"
-                android:layout_height="60dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/plus_button"
-                android:onClick="increment" />
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/plus_button"
+                    android:onClick="increment" />
+
+                <TextView
+                    android:id="@+id/order_summary_text_view"
+                    style="@style/ShapesTextStyle"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/price_background"
+                    android:text="@string/totalPrice" />
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/minus_button"
+                    android:onClick="decrement" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edit_text_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:hint="@string/nameHint"
+                android:inputType="textCapWords"
+                android:textSize="22sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/topping" />
+
+                <CheckBox
+                    android:id="@+id/whipped_cream_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginRight="16dp"
+                    android:onClick="calculatePrice"
+                    android:text="@string/whippedCream" />
+
+                <CheckBox
+                    android:id="@+id/chocolate_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="36sp"
+                    android:layout_marginRight="16dp"
+                    android:onClick="calculatePrice"
+                    android:text="@string/chocolate" />
+
+            </LinearLayout>
 
             <TextView
+                android:id="@+id/quantity_text_view"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="60dp"
+                android:layout_marginTop="80dp"
+                android:background="@drawable/quantity_background"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="#795548"
+                android:textSize="30sp" />
+
+            <Button
                 style="@style/ShapesTextStyle"
-                android:id="@+id/order_summary_text_view"
-                android:background="@drawable/price_background"
-                android:layout_width="110dp"
-                android:layout_marginLeft="12dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/totalPrice" />
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/order_background"
+                android:onClick="submitOrder"
+                android:text="@string/order" />
+        </RelativeLayout>
 
-            <Button
-                android:background="@drawable/minus_button"
-                android:layout_width="80dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="16dp"
-                android:onClick="decrement" />
-
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/edit_text_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:textSize="22sp"
-            android:hint="@string/nameHint"
-            android:inputType="textCapWords" />
-
-        <TextView
-            android:id="@+id/quantity_text_view"
-            android:textSize="30sp"
-            android:textColor="#795548"
-            android:background="@drawable/quantity_background"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginRight="60dp"
-            android:layout_marginTop="80dp"
-            android:textAlignment="center"
-            android:layout_alignParentRight="true"
-            android:text="0" />
-
-        <Button
-            style="@style/ShapesTextStyle"
-            android:layout_width="200dp"
-            android:layout_height="150dp"
-            android:background="@drawable/order_background"
-            android:onClick="submitOrder"
-            android:layout_marginBottom="30dp"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:text="@string/order" />
-
-        <LinearLayout
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="36dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/topping" />
-
-            <CheckBox
-                android:id="@+id/whipped_cream_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="16dp"
-                android:layout_marginLeft="36dp"
-                android:text="@string/whippedCream" />
-
-            <CheckBox
-                android:id="@+id/chocolate_checkbox"
-                android:layout_marginRight="16dp"
-                android:layout_marginLeft="36sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/chocolate" />
-
-        </LinearLayout>
-    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
